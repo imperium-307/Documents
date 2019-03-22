@@ -1,0 +1,4123 @@
+{
+	"info": {
+		"_postman_id": "8f19139d-323e-4de6-a8ec-785f3c4725be",
+		"name": "Imperium",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cleanup (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aea90170-5de2-4e8d-9236-d24b4b669ede",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"peter@g\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80112627-b0d7-4556-9817-d6b91327309a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company@test\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login) Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test3\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete) Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login) Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company1@yo\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete) Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login) Copy Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company2@yo\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete) Copy Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login) Copy Copy Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753eb66a-15c4-49ce-8605-b19bdeb5d8db",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test4\",\n\t\"password\": \"memememe\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete) Copy Copy Copy Copy Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a01064d8-fcbf-47e2-b90b-77dbed812353",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (create user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4c0f75f-bd55-4cc4-91b7-c953d44234a5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"peter@g\",\n\t\"username\": \"pteeer\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"nothing\",\n\t\"bio\": \"hello there\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ecdd5029-d7ad-413b-8f4c-5707eae316c6",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"peter@g\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Story 3 (login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"peter@g\",\n\t\"username\": \"pteeer\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"nothing\",\n\t\"bio\": \"hello there\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a4-+pzmRsYOzWMZUWF5/hiiw2EaSpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Mar 2019 23:52:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBldGVyQGciLCJpYXQiOjE1NTMyMTIzMjMsImV4cCI6MTU1MzIxMjQyM30.AdKJrx4MPW6NMlUEGwGBCC3cFGF0jJrFopAkieSPO8w\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User Story 3 (view profile 1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32ab1411-dc23-4739-87d3-6372b2635d30",
+						"exec": [
+							"pm.test(\"Contains proper email, bio, major\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"jp@jp.com\");",
+							"    pm.expect(pm.response.text()).to.include(\"CS\");",
+							"    pm.expect(pm.response.text()).to.include(\"Savage\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "tokenString",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/jp@jp.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"jp@jp.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (view profile 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f76b8600-1ad3-4102-b6ea-1e62a6cc21df",
+						"exec": [
+							"pm.test(\"Contains proper email, bio, start day, end day, major, university, wage, minor, company\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"testit@123\");",
+							"    pm.expect(pm.response.text()).to.include(\"CS\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-31\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-27\");",
+							"    pm.expect(pm.response.text()).to.include(\"Im the best test\");",
+							"    pm.expect(pm.response.text()).to.include(\"testit@123\");",
+							"    pm.expect(pm.response.text()).to.include(\"None\");",
+							"    pm.expect(pm.response.text()).to.include(\"100000\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testit@123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testit@123"
+					]
+				},
+				"description": "Views profile of p@gmail.com"
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (view profile 3)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f98571a-640d-4943-a939-47c8b14017e4",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"data:image/png;base64,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\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testit@123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testit@123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (view profile 4)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "713285e1-70b2-4be0-afe9-b0bbd616f7db",
+						"exec": [
+							"pm.test(\"Contains all proper regions and values\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"midwest\":true`);",
+							"    pm.expect(pm.response.text()).to.include(\"northeast\");",
+							"    pm.expect(pm.response.text()).to.include(\"south\");",
+							"    pm.expect(pm.response.text()).to.include(\"west\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/yert@dab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"yert@dab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3.5 (sign up as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f52389d3-666a-4f31-ac72-bcb4b7999b2c",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"hello there\",\n\t\"major\": \"CS\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3.5 (login as company user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ed9694f-da37-4ac6-be6e-68283d72ee46",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"hello there\",\n\t\"major\": \"CS\",\n\t\"wage\": \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Story 3 (login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"peter@g\",\n\t\"username\": \"pteeer\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"nothing\",\n\t\"bio\": \"hello there\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "164"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a4-+pzmRsYOzWMZUWF5/hiiw2EaSpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Mar 2019 23:52:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBldGVyQGciLCJpYXQiOjE1NTMyMTIzMjMsImV4cCI6MTU1MzIxMjQyM30.AdKJrx4MPW6NMlUEGwGBCC3cFGF0jJrFopAkieSPO8w\"\n}"
+				}
+			]
+		},
+		{
+			"name": "User Story 3.5 (check criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c8e6c84-8c05-4d3c-96b6-09da0d19e42c",
+						"exec": [
+							"pm.test(\"Contains proper email, persona, description, jobType, start and end dates, wage, location\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company@test\");",
+							"    pm.expect(pm.response.text()).to.include(\"CS\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-14\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-15\");",
+							"    pm.expect(pm.response.text()).to.include(\"midwest\");",
+							"    pm.expect(pm.response.text()).to.include(\"fullTime\");",
+							"    pm.expect(pm.response.text()).to.include(\"hello there\");",
+							"    pm.expect(pm.response.text()).to.include(\"chicago\");",
+							"    pm.expect(pm.response.text()).to.include(\"10000\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\" : \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3.5 (update criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aae928ce-e97c-4046-81f8-55a984b0dd4d",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"bio\": \"changed\",\n\t\"location\": \"not chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3.5 (check new criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8bf01ff9-406f-4f8b-826e-24645373a44c",
+						"exec": [
+							"pm.test(\"Contains proper email and criteria\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company@test\");",
+							"    pm.expect(pm.response.text()).to.include(\"changed\");",
+							"        pm.expect(pm.response.text()).to.include(\"location\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3.5 (delete account)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2580078e-3512-4a8e-94e2-745029864c91",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (signup company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c45b569-672c-41c6-8b27-d0355708f027",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"hello there\",\n\t\"major\": \"CS\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a75f766-799d-4da1-9618-674ed03ba28e",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"peter@g\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (check company a student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a6cbacb-c0af-4c96-93c2-74a367323caa",
+						"exec": [
+							"pm.test(\"Does not display password\", function () ",
+							"{",
+							"    pm.expect(pm.response.text()).to.not.include(\"password\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4d15f023-b393-4629-b241-0216e985e400",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"hello there\",\n\t\"major\": \"CS\",\n\t\"wage\": \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (update criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"company@test\",\n\t\"username\": \"nvidia\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"bio\": \"changed\",\n\t\"location\": \"not chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2a76a9a-529a-4021-bed1-e49e585857cc",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"peter@g\",\n\t\"username\": \"pteeer\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"nothing\",\n\t\"bio\": \"hello there\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (check that update shows for students)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7f91dbf-40e6-4993-ac83-bad55a491b0e",
+						"exec": [
+							"pm.test(\"Contains proper email and criteria\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"company@test\");",
+							"    pm.expect(pm.response.text()).to.include(\"changed\");",
+							"    pm.expect(pm.response.text()).to.include(\"location\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 5 (sign up as user with wage etc.)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "66f697de-476f-4865-920c-0e1ed865ef42",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test\",\n\t\"username\": \"student1\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"im cool\",\n\t\"major\": \"CS\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\",\n\t\"midwest\": true,\n\t\"south\": \"\",\n\t\"northeast\": \"\",\n\t\"west\": \"\",\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 5 (login as new user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3398bb4-2e88-497e-9c89-7ceb4842dd7c",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test\",\n\t\"username\": \"student1\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 5 (update wages etc.)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1600b087-5a96-4484-b0ff-03305acae813",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"student@test\",\n\t\"username\": \"student1\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"im cool\",\n\t\"major\": \"CS\",\n\t\"wage\" : \"5930284021\",\n\t\"jobType\": \"partTime\",\n\t\"start\": \"2019-03-22\",\n\t\"end\": \"2019-03-23\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 5 (check if update worked)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e232304c-3d8a-4664-b944-95a4124dc0e5",
+						"exec": [
+							"pm.test(\"Contains updated wages, dates, and type of job\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"partTime\");",
+							"    pm.expect(pm.response.text()).to.include(\"5930284021\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-22\");",
+							"    pm.expect(pm.response.text()).to.include(\"2019-03-23\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (check if location is stored properly in databse)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e200533a-58a2-472d-83b4-4be05c413a12",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"midwest\");",
+							"    pm.expect(pm.response.text()).to.include(\"northeast\");",
+							"    pm.expect(pm.response.text()).to.include(\"south\");",
+							"    pm.expect(pm.response.text()).to.include(\"west\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (update location)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4323df11-c8e3-4944-a862-f9f892941069",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"midwest\": \"\",\n\t\"south\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (check updated values)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4873d695-123e-4ec0-8b7d-8c0fc65418d9",
+						"exec": [
+							"pm.test(\"Contains updated wages, dates, and type of job\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"midwest\":\"\"`);",
+							"    pm.expect(pm.response.text()).to.include(`\"south\":true`);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (create account with region)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test4\",\n\t\"username\": \"student4\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"cool cat\",\n\t\"major\": \"Computer Science\",\n\t\"wage\" : \"666\",\n\t\"jobType\": \"internship\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\",\n\t\"midwest\": true,\n\t\"south\": \"\",\n\t\"northeast\": \"\",\n\t\"west\": \"\",\n\t\"location\": \"chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test4\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (check if stoed in database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Contains updated wages, dates, and type of job\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"midwest\":true`);",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (update region)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"midwest\": \"\",\n\t\"south\": true,\n\t\"email\": \"student@test4\",\n\t\"username\": \"student4\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"cool cat\",\n\t\"major\": \"Computer Science\",\n\t\"wage\" : \"666\",\n\t\"jobType\": \"internship\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (check if stored in database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"midwest\": \"\",\n\t\"south\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user Story 8 (create acct with coop)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test5\",\n\t\"username\": \"student5\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"cool cat\",\n\t\"major\": \"Computer Science\",\n\t\"wage\" : \"666\",\n\t\"jobType\": \"coop\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\",\n\t\"midwest\": true,\n\t\"south\": \"\",\n\t\"northeast\": \"\",\n\t\"west\": \"\",\n\t\"location\": \"chicago\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user Story 8 (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test5\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (check database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Contains updated wages, dates, and type of job\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"jobType\":\"coop\"`);",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (delete acct)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cba44fc-5ec5-48bf-b9b7-1591b3e8761e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (signup new student with multiple majors)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6df88ca8-4fc1-4f1c-8737-2de28398b15b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test2\",\n\t\"username\": \"student2\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"im cool\",\n\t\"major\": \"CS, Mathematics\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\",\n\t\"midwest\": true,\n\t\"south\": \"\",\n\t\"northeast\": \"\",\n\t\"west\": \"\",\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (login with new user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a07de8c1-eecf-44c0-b547-3043ef3f1586",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test2\",\n\t\"username\": \"student2\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (compare to string in database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "69776b80-7ab1-4eb6-aa2c-7bec4e46da0e",
+						"exec": [
+							"pm.test(\"Major variable contains multiple majors\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"CS, Mathematics\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (update major)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "880e62ad-8019-4435-a3df-6aa221181482",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"student@test2\",\n\t\"username\": \"student2\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"im cool\",\n\t\"major\": \"Engineering, Chemistry\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (see if value updated in database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c3f0d4c4-a3db-4ae4-8265-d85a3ea5a47d",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Engineering, Chemistry\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"student@test2\",\n\t\"username\": \"student2\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (delete user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7e7bef6a-f09e-4468-97fb-cea7d09e16f8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (create user aka liker)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c59d65f0-472b-4704-916f-93a99caecc08",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test3\",\n\t\"username\": \"student3\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"student\",\n\t\"bio\": \"cool cat\",\n\t\"major\": \"Computer Science\",\n\t\"wage\" : \"666\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-20\",\n\t\"end\": \"2019-03-21\",\n\t\"midwest\": true,\n\t\"south\": \"\",\n\t\"northeast\": \"\",\n\t\"west\": \"\",\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (create company aka likee)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3fcc187-881b-4e0f-84e3-966ee6bf3d19",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company1@yo\",\n\t\"username\": \"google\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"im google\",\n\t\"major\": \"CS\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"fullTime\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"location\": \"chicago\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (login as user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "240a2431-63aa-4c30-ae3c-af388e38430f",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"student@test3\",\n\t\"username\": \"student3\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (like company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f38f41b6-3a58-4671-9580-0a335779301e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"company1@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (check database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c285f1bb-fa38-42f8-972e-b6a10e244034",
+						"exec": [
+							"pm.test(\"Contains proper company in likes\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"likes\");",
+							"    pm.expect(pm.response.text()).to.include(\"company1@yo\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (create second company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "40226319-0a8d-47fa-8bdd-6fc8944a3d1e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company2@yo\",\n\t\"username\": \"microsoft\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"im microsoft\",\n\t\"major\": \"Anything\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"coop\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"south\": true,\n\t\"location\": \"detroit\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (dislike second company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6403d503-68a7-46d6-9fc7-2480588a74ac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"company2@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/dislike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"dislike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (check database for dislikes)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cb02944-b5e5-43d3-b4a8-71206b088998",
+						"exec": [
+							"pm.test(\"Contains proper company in dislikes\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dislikes\");",
+							"    pm.expect(pm.response.text()).to.include(\"company2@yo\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (favorite company 1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"favoritee\": \"company1@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (favorite company 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "33f47002-92cc-43c5-b7db-1d7608ce33ad",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"favoritee\": \"company2@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (check database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a11ab8f0-307d-4d98-8b4d-c8f9d9f6218f",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"favorites\");",
+							"    pm.expect(pm.response.text()).to.include(\"company1@yo\");",
+							"    pm.expect(pm.response.text()).to.include(\"company2@yo\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (unfavorite company 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a973d15-ca63-425a-9ef8-08f801b86c9b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"favoritee\": \"company2@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/unfavorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"unfavorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (check database for favorites)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cfb61129-9791-4c57-8bde-eac949718069",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"favorites\");",
+							"    pm.expect(pm.response.text()).to.include(\"company1@yo\");",
+							"    pm.expect(pm.response.text()).to.not.include(\"company2@yo\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/student@test3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"student@test3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (login as company 1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e02acd9a-073d-4f1d-b745-2f748d69f4da",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company1@yo\",\n\t\"username\": \"google\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (company tries to favorite user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "84f32c58-4230-42c1-a3cf-5ea505aec38a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"favoritee\": \"student@test3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"student@test3\",\n\t\"username\": \"student3\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\"\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (dislike company 1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"likee\": \"company1@yo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/dislike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"dislike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (like company 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"likee\": \"company2@yo\"\n\t}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (check database for unmatch)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Contains proper company in dislikes\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dislikes\");",
+							"    pm.expect(pm.response.text()).to.include(\"company2@yo\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 13 (sign up new company with bio)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company3@yo\",\n\t\"username\": \"boeing\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"This job is for flying\",\n\t\"major\": \"Anything\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"coop\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"south\": true,\n\t\"location\": \"detroit\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 13 (login)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company3@yo\",\n\t\"username\": \"boeing\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 13 (check bio in database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb516a2d-cf47-4574-a61c-5317f735adac",
+						"exec": [
+							"pm.test(\"Contains proper bio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"This job is for flying\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company3@yo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company3@yo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 13 (update bio)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"company3@yo\",\n\t\"username\": \"boeing\",\n\t\"password\": \"memememe\",\n\t\"passwordConfirm\": \"memememe\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"This job is the absolute worst\",\n\t\"major\": \"Anything\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"coop\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"south\": true,\n\t\"location\": \"detroit\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 13 (check database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4319e16-0dce-4baf-99c9-e5e9cc1f4205",
+						"exec": [
+							"pm.test(\"Contains proper bio\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"This job is the absolute worst\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/company3@yo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"company3@yo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 14 (login with company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9137495b-cd2d-42c7-8a56-b732ee3c31b9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"company3@yo\",\n\t\"username\": \"boeing\",\n\t\"password\": \"memememe\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 14 (like student as employer)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f4f4a58b-4b55-4430-8237-f25436df9c4f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\":\"student@test3\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 14 (check database)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cb4c28e5-99a3-46a4-bcdc-2ea17426abb9",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"student@test3\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\":\"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad34ae63-4f35-4aea-a74e-0323194a0378",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
