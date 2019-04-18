@@ -1,0 +1,3015 @@
+{
+	"info": {
+		"_postman_id": "0fa35021-3fe5-4794-9a59-4513496a2c04",
+		"name": "Imperium 2",
+		"description": "Test cases for Sprint 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Story 1 (signup as random company)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0c6800e4-fa4f-4145-b42d-aef919792649",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a6fda16-c7fb-4b29-9455-62395b1f1d4c",
+						"exec": [
+							"pm.test(\"Sign up successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\",\n\t\"passwordConfirm\": \"hello\",\n\t\"persona\": \"employer\",\n\t\"bio\": \"This job is for flying\",\n\t\"major\": \"Anything\",\n\t\"wage\" : \"10000\",\n\t\"jobType\": \"coop\",\n\t\"start\": \"2019-03-14\",\n\t\"end\": \"2019-03-15\",\n\t\"midwest\": true,\n\t\"south\": true,\n\t\"location\": \"detroit\",\n\t\"photo\": \"blahblah\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (signup as random user)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b9276e9f-5e54-4113-8ba7-0c227a8690fd",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "da3017a6-efe4-4c0f-b574-f1995603a1ac",
+						"exec": [
+							"pm.test(\"Sign up successful\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"persona\": \"student\",\n\t\"bio\": \"This job is for flying\",\n\t\"major\": \"Anything\",\n\t\"wage\" : \"500\",\n\t\"jobType\": \"internship\",\n\t\"start\": \"2019-04-26\",\n\t\"end\": \"2019-04-30\",\n\t\"midwest\": true,\n\t\"south\": true,\n\t\"location\": \"detroit\",\n\t\"company\": \"\",\n\t\"desktopNotifications\": true,\n\t\"favoriteNotifications\": true,\n\t\"emailNotifications\": true,\n\t\"photo\": \"blahblah\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (login as company)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0dddc4d3-e12f-4a6f-949c-f4f6e3a97690",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e1fd198-fa49-422b-a58d-ad4778cf6f91",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\",\n\t\"passwordConfirm\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (create job posting)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"pm.test(\"Job created succesfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc08bfc7-ec9a-4228-8696-ccd96e77da8b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"bio\": \"whatever you want\",\n\t\"creator\": \"testCompany1@yahoo.com\",\n\t\"email\": \"testCompany1@yahoo.com-1\",\n\t\"major\": \"art\",\n\t\"jobName\": \"job\",\n\t\"jobType\": \"internship\",\n\t\"midwest\": true,\n\t\"south\": false,\n\t\"west\": false,\n    \"northeast\": false,\n    \"location\": \"Chicago\",\n    \"photo\": \"brokenbase64 thing\",\n    \"start\": \"now\",\n    \"end\": \"then\",\n\t\"wage\": \"100000\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/create-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"create-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (like company as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Company liked successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"likee\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (check history of user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Contains proper user history\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"testCompany1@yahoo.com-1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (dislike company as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Company liked successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"likee\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/dislike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"dislike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (check history of user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Contains proper user history\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"dislikes\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 1 (like company as student) Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Company liked successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"likee\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 2 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 2 (like student as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Student liked successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testStudent1@gmail.com\",\n\t\"iam\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 2 (check history of company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acb2e1-4730-4e00-b7b5-571536e41dcb",
+						"exec": [
+							"pm.test(\"Contains proper user history\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"testStudent1@gmail.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\"jobid\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/get-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"get-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (send message from company to student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2d4f2e-2424-4c77-9265-0da85fac422e",
+						"exec": [
+							"pm.test(\"Message sent\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\t\"iam\": \"testCompany1@yahoo.com-6\",\n\t\"recipient\": \"testStudent1@gmail.com\",\n\t\"message\": \"hey I'm gonna give you a job\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (send message from company to student 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2d4f2e-2424-4c77-9265-0da85fac422e",
+						"exec": [
+							"pm.test(\"Message sent\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"iam\": \"testCompany1@yahoo.com-6\",\n\t\"recipient\": \"testStudent1@gmail.com\",\n\t\"message\": \"but first we need an interview\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (send message from company to student 3)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2d4f2e-2424-4c77-9265-0da85fac422e",
+						"exec": [
+							"pm.test(\"Message sent\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"iam\": \"testCompany1@yahoo.com-6\",\n\t\"recipient\": \"testStudent1@gmail.com\",\n\t\"message\": \"how does Wednesday sound\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 3 (get messages)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2d4f2e-2424-4c77-9265-0da85fac422e",
+						"exec": [
+							"pm.test(\"Messages are correct\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"hey I'm gonna give you a job\");",
+							"    pm.expect(pm.response.text()).to.include(\"but first we need an interview\");",
+							"    pm.expect(pm.response.text()).to.include(\"how does Wednesday sound\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"iam\": \"testCompany1@yahoo.com-6\",\n\t\"recipient\": \"testStudent1@gmail.com\",\n\t\"after\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/messages-after",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"messages-after"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (hide user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"pm.test(\"User hidden\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"isHidden\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (check database for update )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Profile is hidden\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"isHidden\":true`);",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (hide user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"pm.test(\"Company hidden\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\",\n\t\"passwordConfirm\": \"hello\",\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"isHidden\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 4 (check database for update )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Profile is hidden\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"isHidden\":true`);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testCompany1@yahoo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testCompany1@yahoo.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (favorite company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Company favorited\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/favorite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"favorite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (check database for favorites)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a11ab8f0-307d-4d98-8b4d-c8f9d9f6218f",
+						"exec": [
+							"pm.test(\"Appears in database\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"favorites\");",
+							"    pm.expect(pm.response.text()).to.include(\"testCompany1@yahoo.com-1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (like student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Student liked\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testStudent1@gmail.com\",\n\t\"iam\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (check database for like)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a11ab8f0-307d-4d98-8b4d-c8f9d9f6218f",
+						"exec": [
+							"pm.test(\"Likes are correct\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"likes\");",
+							"    pm.expect(pm.response.text()).to.include(\"testStudent1@gmail.com\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"jobid\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/get-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"get-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 6 (unmatch student and company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Unmatched student and company\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testStudent1@gmail.com\",\n\t\"iam\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/unmatch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"unmatch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (login as user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (check database for email notification var)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Contains email notification variable\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"emailNotifications\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (set email notifications to true)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Email notifications set to true\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"emailNotifications\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (like company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Company liked\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 7 (like student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08596b7-16fe-437d-ba00-9efb506f1b49",
+						"exec": [
+							"pm.test(\"Student liked\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"likee\": \"testStudent1@gmail.com\",\n\t\"iam\": \"testCompany1@yahoo.com-1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (login as user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (check database for desktop notification var)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Contains desktop notification variable\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"desktopNotifications\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 8 (send message from company to student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a2d4f2e-2424-4c77-9265-0da85fac422e",
+						"exec": [
+							"pm.test(\"Notification received\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"token\": \"{{token}}\",\n\t\"iam\": \"testCompany1@yahoo.com-1\",\n\t\"recipient\": \"testStudent1@gmail.com\",\n\t\"message\": \"did you get a notification\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (update criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Notifications set to false\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"desktopNotifications\": false,\n\t\"emailNotifications\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (check database for update)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Notification settings updated correctly\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"desktopNotifications\":false`);",
+							"    pm.expect(pm.response.text()).to.include(`\"emailNotifications\":false`);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"desktopNotifications\": false,\n\t\"favoriteNotifications\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (update criteria)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Notifications set to true\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"desktopNotifications\": true,\n\t\"emailNotifications\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 9 (check database for update 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Notification settins updated correctly\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"desktopNotifications\":true`);",
+							"    pm.expect(pm.response.text()).to.include(`\"emailNotifications\":true`);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (check database for favorite notification var)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Contains favorite notification variable\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"favoriteNotifications\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (disable favorite notifications)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Disable favorite notifications\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\",\n\t\"passwordConfirm\": \"hellothere\",\n\t\"favoriteNotifications\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/ch-settings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"ch-settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 10 (check database for update)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Notifications updated correctly\", function () {",
+							"    pm.expect(pm.response.text()).to.include(`\"favoriteNotifications\":false`);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/view/testStudent1@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"view",
+						"testStudent1@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (check if main page exists for company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a84fa27-d4a5-40cc-9213-4c836f468750",
+						"exec": [
+							"pm.test(\"Company can access main page\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"companyemail\": \"testCompany1@yahoo.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/get-all-jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"get-all-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (login as student)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 11 (check all jobs for students)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a84fa27-d4a5-40cc-9213-4c836f468750",
+						"exec": [
+							"pm.test(\"Students can check all jobs\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"companyemail\": \"testStudent1@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/get-all-jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"get-all-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (create job posting 2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"pm.test(\"Job created successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc08bfc7-ec9a-4228-8696-ccd96e77da8b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"bio\": \"whatever you want\",\n\t\"creator\": \"testCompany1@yahoo.com\",\n\t\"email\": \"testCompany1@yahoo.com-2\",\n\t\"major\": \"art\",\n\t\"jobName\": \"software engineer\",\n\t\"jobType\": \"coop\",\n\t\"midwest\": true,\n\t\"south\": false,\n\t\"west\": false,\n    \"northeast\": false,\n    \"location\": \"Chicago\",\n    \"photo\": \"brokenbase64 thing\",\n    \"start\": \"now\",\n    \"end\": \"then\",\n\t\"wage\": \"100000\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/create-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"create-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (create job posting 3)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c633d41-72fc-4891-a8cb-8d2a3b89ed03",
+						"exec": [
+							"pm.test(\"Job created successfully\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc08bfc7-ec9a-4228-8696-ccd96e77da8b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"bio\": \"yo yo\",\n\t\"creator\": \"testCompany1@yahoo.com\",\n\t\"email\": \"testCompany1@yahoo.com-3\",\n\t\"major\": \"art\",\n\t\"jobName\": \"rockstar\",\n\t\"jobType\": \"internship\",\n\t\"midwest\": true,\n\t\"south\": false,\n\t\"west\": false,\n    \"northeast\": false,\n    \"location\": \"Chicago\",\n    \"photo\": \"brokenbase64 thing\",\n    \"start\": \"now\",\n    \"end\": \"then\",\n\t\"wage\": \"100000\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/create-job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"create-job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Story 12 (check database for jobs)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b6c1855-28ea-44b0-9b41-1195ab4e1fd8",
+						"exec": [
+							"pm.test(\"Contains all new job postings\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"testCompany1@yahoo.com-1\");",
+							"    pm.expect(pm.response.text()).to.include(\"testCompany1@yahoo.com-2\");",
+							"    pm.expect(pm.response.text()).to.include(\"testCompany1@yahoo.com-3\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\",\n\t\"companyemail\": \"testCompany1@yahoo.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/get-all-jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"get-all-jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login as user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bde025cc-e9f4-4522-bf33-fe2baea87288",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testStudent1@gmail.com\",\n\t\"username\": \"studentTest\",\n\t\"password\": \"hellothere\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad34ae63-4f35-4aea-a74e-0323194a0378",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (login as company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bde025cc-e9f4-4522-bf33-fe2baea87288",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"testCompany1@yahoo.com\",\n\t\"username\": \"companyTest\",\n\t\"password\": \"hello\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cleanup (delete company)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad34ae63-4f35-4aea-a74e-0323194a0378",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"{{token}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
